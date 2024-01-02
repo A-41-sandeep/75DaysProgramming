@@ -1,0 +1,13 @@
+SC-O[1]   TC-O[n] 
+class Solution {
+    public int maxProfit(int[] prices) {
+        int j=prices.length-1,max=prices[j--];
+        int ans=0;
+        while(j>=0)
+        {
+            ans=Math.max(ans,(max-prices[j]));
+            max=Math.max(max,prices[j--]);
+        }
+        return ans;
+    }
+}
