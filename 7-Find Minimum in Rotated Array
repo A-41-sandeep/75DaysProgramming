@@ -1,0 +1,29 @@
+SC-O[1]  TC-O[n}
+
+class Solution {
+    public int findMin(int[] nums) {
+        int left=0,right=nums.length-1,result=nums[0];
+        while(left<=right)
+        {
+            if(nums[left]<nums[right])
+            {
+                result=Math.min(result,nums[left]);
+                return result;
+            }
+            int i=(right+left)/2;
+            int mid=nums[i];
+            if(nums[left]<=mid)
+            {
+                result=Math.min(result,mid);
+                left=i+1;
+            }
+            else
+            {
+                result=Math.min(result,mid);
+                right=i-1;
+                                
+            }
+        }
+         return result;
+    }
+}
